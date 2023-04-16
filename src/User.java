@@ -7,7 +7,7 @@ public class User {
 
     public User(String login, String email) {
         this.login = login;
-        this.email = email;
+        this.email = this.checkEmail(email)?email:"";
     }
 
     public String getLogin() {
@@ -23,6 +23,10 @@ public class User {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email = this.checkEmail(email)?email:"";
+    }
+
+    private boolean checkEmail(String email) {
+        return email.contains("@") || email.contains(".");
     }
 }

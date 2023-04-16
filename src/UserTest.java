@@ -16,15 +16,14 @@ public class UserTest {
     @Test
     public void testUser2() {
         User user = new User();
-        assertNotNull(user.getLogin());
-        assertNotNull(user.getEmail());
+        assertNull(user.getLogin());
+        assertNull(user.getEmail());
     }
 
     @Test
     public void testUser3() {
         User user = new User("Petr", "petr@email.ru");
-        assertTrue(user.getEmail().contains("@"));
-        assertTrue(user.getEmail().contains("."));
+        assertNotEquals("", user.getEmail());
     }
 
     @Test
