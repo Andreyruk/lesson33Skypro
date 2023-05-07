@@ -1,5 +1,4 @@
 import org.junit.Test;
-import org.junit.function.ThrowingRunnable;
 
 import static org.junit.Assert.*;
 
@@ -30,7 +29,8 @@ public class UserTest {
 
     @Test
     public void testUser4() {
-        User user = new User("Petr", "petr@email.ru");
-        assertNotEquals(user.getLogin(), user.getEmail());
+//        User user = new User("Petr", "petr@email.ru");
+        assertThrows(IllegalStateException.class, () -> new User("Petr", "Petr"));
+//        assertNotEquals(user.getLogin(), user.getEmail());
     }
 }

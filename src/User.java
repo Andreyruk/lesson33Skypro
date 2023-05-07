@@ -6,10 +6,13 @@ public class User {
     }
 
     public User(String login, String email) {
-        this.login = login;
+        if (login.equalsIgnoreCase(email)) throw new IllegalStateException("Логин и емайл равны");
+            this.login = login;
 //        if (this.checkEmail(email)) this.email=email;
 //        else throw new RuntimeException("11111");
-        this.email = this.checkEmail(email) ? email : "";
+            this.email = this.checkEmail(email) ? email : "";
+
+
     }
 
     public String getLogin() {
